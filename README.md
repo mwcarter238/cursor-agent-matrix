@@ -60,7 +60,8 @@ VITE_API_URL=https://your-api-host.example.com npm run build
 
 ## Features (v0.1)
 
-- Poll cloud agents, visualize as graph (NEXUS hub + agents + animated links)
+- **NEXUS-style control surface** (chrome, KPI strip, roster, Kanban lanes, right-rail sparkline/gauges/log, scanlines) with **Board / Timeline / Analytics** views
+- Poll cloud agents; **Timeline** view shows the React Flow topology (NEXUS hub + animated links)
 - Inspector: status, repo, PR links, load transcript, follow-up, stop, delete
 - Launch agent modal (`POST /v0/agents` via proxy)
 - Reduce-motion toggle (persists in `localStorage`)
