@@ -1,0 +1,225 @@
+.workflow {
+  gap: 14px;
+}
+
+.wf-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.wf-back {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  border-radius: 12px;
+  color: var(--text-0);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+}
+.wf-title-group {
+  display: flex;
+  flex-direction: column;
+}
+.wf-title {
+  font-size: 22px;
+  font-weight: 720;
+  letter-spacing: -0.02em;
+}
+.wf-tally {
+  margin-left: auto;
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  color: var(--accent);
+}
+
+.wf-error {
+  color: var(--danger);
+  font-size: 13.5px;
+  text-align: center;
+  padding: 2px 8px;
+}
+
+.wf-actions {
+  margin-top: 2px;
+}
+
+.wf-session {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.wf-session-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+}
+.wf-session-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+.wf-session-meta {
+  font-size: 13px;
+}
+
+/* ---- Bottom sheets (review + manual) ---- */
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(2, 4, 10, 0.6);
+  backdrop-filter: blur(3px);
+}
+.sheet {
+  width: 100%;
+  max-width: 480px;
+  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
+  border: 1px solid var(--line-strong);
+  border-bottom: none;
+  border-radius: 26px 26px 0 0;
+  padding: 12px 20px calc(22px + var(--pad-bottom));
+  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.55);
+}
+.sheet-grip {
+  width: 42px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--line-strong);
+  margin: 2px auto 16px;
+}
+.sheet-title {
+  font-size: 18px;
+  font-weight: 680;
+  margin-bottom: 6px;
+}
+
+.review-product {
+  margin-bottom: 16px;
+}
+.review-name-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.review-name {
+  font-size: 21px;
+  font-weight: 720;
+  letter-spacing: -0.02em;
+}
+.review-sub {
+  font-size: 13.5px;
+  margin-top: 3px;
+}
+
+.review-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: rgba(5, 8, 18, 0.5);
+  border: 1px solid var(--line);
+  margin-bottom: 18px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.field-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.field-value {
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  word-break: break-all;
+}
+.mono {
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, monospace;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.review-qty {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.review-qty-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+.count-hint {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.review-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.manual-input {
+  width: 100%;
+  margin: 14px 0;
+  padding: 15px 16px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  color: var(--text-0);
+  background: rgba(5, 8, 18, 0.6);
+  border: 1px solid var(--line-strong);
+  outline: none;
+}
+.manual-input:focus {
+  border-color: var(--blue-bright);
+}
+
+.pill-warn {
+  color: var(--warn);
+  border-color: color-mix(in srgb, var(--warn) 45%, transparent);
+}
+
+/* ---- Success flash ---- */
+.wf-success {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(2, 4, 10, 0.55);
+  backdrop-filter: blur(4px);
+}
+.success-ring {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #04140d;
+  background: var(--success);
+  box-shadow: 0 0 50px rgba(46, 230, 166, 0.5);
+}
+.success-text {
+  font-size: 17px;
+  font-weight: 650;
+}

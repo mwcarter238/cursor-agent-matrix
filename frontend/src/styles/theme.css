@@ -1,0 +1,47 @@
+:root {
+  /* Core palette — black & deep blue */
+  --bg-0: #05070f; /* near-black base */
+  --bg-1: #0a0f1f; /* raised surface */
+  --bg-2: #0f1730; /* card surface */
+  --bg-3: #16203f; /* elevated / hover */
+
+  --blue-deep: #0b1b46;
+  --blue: #1b3a8f;
+  --blue-bright: #2f6bff;
+  --blue-glow: #3d7bff;
+  --cyan: #57e0ff;
+
+  --text-0: #f4f7ff; /* primary text */
+  --text-1: #aeb9d6; /* secondary text */
+  --text-2: #6b779b; /* muted text */
+
+  --line: rgba(120, 150, 220, 0.12);
+  --line-strong: rgba(120, 150, 220, 0.24);
+
+  --success: #2ee6a6;
+  --warn: #ffc857;
+  --danger: #ff5d6c;
+
+  --radius-sm: 12px;
+  --radius: 18px;
+  --radius-lg: 26px;
+
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 12px 40px rgba(47, 107, 255, 0.28);
+
+  /* Safe-area aware spacing for notched phones */
+  --pad-top: max(18px, env(safe-area-inset-top));
+  --pad-bottom: max(18px, env(safe-area-inset-bottom));
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  color-scheme: dark;
+}
+
+/* A premium radial wash so the black never looks flat. */
+.app-bg {
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(47, 107, 255, 0.16), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(11, 27, 70, 0.5), transparent 55%),
+    var(--bg-0);
+}

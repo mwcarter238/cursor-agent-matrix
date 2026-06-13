@@ -1,17 +1,18 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-const apiTarget = process.env.VITE_DEV_API_PROXY ?? 'http://127.0.0.1:8787'
+// The camera (getUserMedia) requires a secure context. `localhost` counts as
+// secure, so `npm run dev` works directly on the dev machine. To test on a
+// real phone over the LAN, serve over HTTPS (e.g. a tunnel or a TLS proxy).
+const apiProxyTarget = process.env.VITE_DEV_API_PROXY ?? "http://127.0.0.1:8080";
 
 export default defineConfig({
   plugins: [react()],
   server: {
+    host: true,
     port: 5173,
     proxy: {
-      '/api': {
-        target: apiTarget,
-        changeOrigin: true,
-      },
+      "/api": { target: apiProxyTarget, changeOrigin: true },
     },
   },
-})
+});

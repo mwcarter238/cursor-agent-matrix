@@ -1,0 +1,86 @@
+.home-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.signout {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--text-1);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+}
+
+.home-prompt {
+  margin-top: 22px;
+  margin-bottom: 16px;
+}
+
+.workflow-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.workflow-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 18px;
+  text-align: left;
+  overflow: hidden;
+}
+
+/* A subtle accent wash bleeding in from the left edge. */
+.workflow-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    color-mix(in srgb, var(--accent) 18%, transparent),
+    transparent 42%
+  );
+  pointer-events: none;
+}
+
+.workflow-glyph {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 36%, transparent);
+}
+
+.workflow-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.workflow-title {
+  font-size: 18px;
+  font-weight: 680;
+  letter-spacing: -0.01em;
+}
+.workflow-blurb {
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+.workflow-arrow {
+  position: relative;
+  margin-left: auto;
+  font-size: 26px;
+  color: var(--text-2);
+}

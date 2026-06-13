@@ -1,0 +1,38 @@
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stepper-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  font-size: 28px;
+  font-weight: 500;
+  background: var(--bg-2);
+  border: 1px solid var(--line-strong);
+  color: var(--text-0);
+  transition: transform 0.12s var(--ease), background 0.2s var(--ease);
+}
+.stepper-btn:active:not(:disabled) {
+  transform: scale(0.92);
+  background: var(--bg-3);
+}
+.stepper-btn:disabled {
+  opacity: 0.4;
+}
+
+.stepper-value {
+  flex: 1;
+  min-width: 0;
+  height: 56px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-0);
+  background: transparent;
+  border: none;
+  outline: none;
+}

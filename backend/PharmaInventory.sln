@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PharmaInventory.Api", "PharmaInventory.Api\PharmaInventory.Api.csproj", "{ABD4CDA0-2FE0-4289-BD30-D6C2A576F4EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PharmaInventory.Tests", "PharmaInventory.Tests\PharmaInventory.Tests.csproj", "{794131BF-2E63-4267-97AB-20D64C7031D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABD4CDA0-2FE0-4289-BD30-D6C2A576F4EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABD4CDA0-2FE0-4289-BD30-D6C2A576F4EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABD4CDA0-2FE0-4289-BD30-D6C2A576F4EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABD4CDA0-2FE0-4289-BD30-D6C2A576F4EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{794131BF-2E63-4267-97AB-20D64C7031D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{794131BF-2E63-4267-97AB-20D64C7031D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{794131BF-2E63-4267-97AB-20D64C7031D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{794131BF-2E63-4267-97AB-20D64C7031D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
