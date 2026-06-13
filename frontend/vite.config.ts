@@ -11,6 +11,9 @@ export default defineConfig({
   server: {
     host: true,
     port: 5173,
+    // Allow tunnel/preview hostnames (e.g. *.trycloudflare.com) so the dev
+    // server can be reached over HTTPS for camera testing on a phone.
+    allowedHosts: true,
     proxy: {
       "/api": { target: apiProxyTarget, changeOrigin: true },
     },
