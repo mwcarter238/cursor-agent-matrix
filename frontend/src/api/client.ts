@@ -1,5 +1,6 @@
 import type {
   InventoryRow,
+  LoginResponse,
   MovementRequest,
   MovementResponse,
   ScanResult,
@@ -7,11 +8,22 @@ import type {
   User,
   WorkflowMode,
 } from "./types";
+import { localApi } from "./localData";
 
-export interface LoginResponse {
-  token: string;
-  user: User;
+export type { LoginResponse };
+
+/** The set of operations the UI needs; satisfied by either backend. */
+export interface Api {
+  listOperators(): Promise<User[]>;
+  login(username: string, pin: string): Promise<LoginResponse>;
+  parse(raw: string): Promise<ScanResult>;
+  movement(mode: WorkflowMode, body: MovementRequest): Promise<MovementResponse>;
+  inventory(): Promise<InventoryRow[]>;
+  transactions(take?: number): Promise<Transaction[]>;
 }
+
+// The static GitHub Pages build runs entirely on-device (no .NET backend).
+const LOCAL_MODE = import.meta.env.VITE_DATA_MODE === "local";
 
 const API_BASE = import.meta.env.VITE_API_URL ?? "";
 const TOKEN_KEY = "stockwell.token";
@@ -59,7 +71,7 @@ async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
   return (await res.json()) as T;
 }
 
-export const api = {
+const httpApi: Api = {
   listOperators: () => request<User[]>("/auth/operators"),
 
   login: (username: string, pin: string) =>
@@ -85,3 +97,5 @@ export const api = {
   transactions: (take = 50) =>
     request<Transaction[]>(`/inventory/transactions?take=${take}`),
 };
+
+export const api: Api = LOCAL_MODE ? localApi : httpApi;

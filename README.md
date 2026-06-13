@@ -10,6 +10,20 @@ Three workflows, one scan each:
 2. **Dispense** — scan product as it is dispensed to a patient.
 3. **Cycle Count** — scan to reconcile what is physically on the shelf.
 
+## Live demo (GitHub Pages)
+
+A phone-ready build is published to GitHub Pages on every push:
+
+**https://mwcarter238.github.io/cursor-agent-matrix/**
+
+Pages can only serve static files, so this build runs **entirely on-device** —
+the GS1 parsing, inventory, history, and PIN login all run in the browser with
+data stored in `localStorage` (no backend). It's ideal for testing the camera
+and the three workflows on a phone (Pages is HTTPS, so the camera works). The
+full multi-user .NET + PostgreSQL backend in `backend/` is the production path.
+
+Demo logins: **demo / 1234** (pharmacist) or **tech / 0000**.
+
 ## Stack
 
 | Layer    | Technology                                            |

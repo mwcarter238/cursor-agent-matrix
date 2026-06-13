@@ -5,6 +5,11 @@ export interface User {
   role: string;
 }
 
+export interface LoginResponse {
+  token: string;
+  user: User;
+}
+
 export interface Gs1Element {
   ai: string;
   name: string;

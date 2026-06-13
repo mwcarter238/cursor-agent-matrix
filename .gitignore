@@ -16,3 +16,6 @@ frontend/dist/
 .vscode/
 .idea/
 .DS_Store
+
+# TS build info
+*.tsbuildinfo

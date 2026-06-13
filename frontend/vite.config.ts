@@ -8,6 +8,9 @@ const apiProxyTarget = process.env.VITE_DEV_API_PROXY ?? "http://127.0.0.1:8080"
 
 export default defineConfig({
   plugins: [react()],
+  // For project GitHub Pages the app is served from a subpath
+  // (e.g. /cursor-agent-matrix/); the deploy workflow sets VITE_BASE.
+  base: process.env.VITE_BASE ?? "/",
   server: {
     host: true,
     port: 5173,
