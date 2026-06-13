@@ -1,12 +1,44 @@
 services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: pharma
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pharma}
+      POSTGRES_DB: pharma
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pharma"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
   api:
     build:
       context: ./backend
+      dockerfile: PharmaInventory.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://0.0.0.0:8080
+      ConnectionStrings__Default: "Host=db;Port=5432;Database=pharma;Username=pharma;Password=${POSTGRES_PASSWORD:-pharma}"
+      Jwt__Key: ${JWT_KEY:-change-me-to-a-long-random-secret-at-least-32-chars}
+      CORS_ORIGINS: "http://localhost:8080,http://localhost"
+    ports:
+      - "8081:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    build:
+      context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "8787:8787"
-    env_file:
-      - .env
-    environment:
-      API_HOST: 0.0.0.0
-      API_PORT: "8787"
+      - "8080:80"
+    depends_on:
+      - api
+
+volumes:
+  pgdata:

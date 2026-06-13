@@ -1,19 +1,18 @@
-.env
-.env.local
-.env.*.local
+# .NET
+bin/
+obj/
+*.user
 
+# Node
 node_modules/
 frontend/dist/
-*.tsbuildinfo
 
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-*.egg-info/
+# Env / secrets
+.env
+*.local
 
-.DS_Store
-.idea/
+# Editor / OS
+.vs/
 .vscode/
-
-*.db
+.idea/
+.DS_Store
